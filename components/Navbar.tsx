@@ -12,9 +12,9 @@ export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <nav className="navbarNav flex items-center justify-between px-6 py-3 bg-[var(--background)] text-[var(--foreground)]">
-            {/* Sol Logo */}
-            <span className="logoBox flex items-center gap-2">
+        <nav className="navbarNav">
+            {/* Sol Logo (her zaman sabit) */}
+            <Link href={"/"} className="logoBox">
                 <Image
                     src={theme === "dark"
                         ? "https://res.cloudinary.com/ds4suhwnb/image/upload/v1748902508/DK_LogoWhite_cgyafw.png"
@@ -24,39 +24,41 @@ export default function Navbar() {
                     height={50}
                     className="logoImage"
                 />
-                <span className="logoText flex flex-col items-center text-xs sm:text-base">
+                <span className="logoText">
                     <span>Dorukhan</span>
                     <span>KILIÇASLAN</span>
                 </span>
-            </span>
+            </Link>
 
-            {/* Hamburger Button (Mobile) */}
-            <button
-                className="hamburger"
-                aria-label="Menüyü Aç/Kapat"
-                onClick={() => setMenuOpen(!menuOpen)}
-            >
-                <span className={`bar ${menuOpen ? "open" : ""}`}></span>
-                <span className={`bar ${menuOpen ? "open" : ""}`}></span>
-                <span className={`bar ${menuOpen ? "open" : ""}`}></span>
-            </button>
+            {/* Sağda hamburger ve menü */}
+            <div className="navbarRight">
+                {/* Hamburger Button (Mobile) */}
+                <button
+                    className={`hamburger ${menuOpen ? "open" : ""}`}
+                    aria-label="Menüyü Aç/Kapat"
+                    onClick={() => setMenuOpen(!menuOpen)}
+                >
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                    <span className="bar"></span>
+                </button>
 
-            {/* Menü ve Tema Butonu */}
-            <div className={`navbarLinksWrapper ${menuOpen ? "open" : ""}`}>
-                <div className="navbarLinks absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex space-x-4 items-center
-                sm:static sm:translate-x-0 sm:translate-y-0 sm:flex">
-                    <Link href="/" className="text-white"><span className="text-l">Anasayfa</span></Link>
-                    <Link href="/projects" className="text-white"><span className="text-l">Projeler</span></Link>
-                    <Link href="/about" className="text-white"><span className="text-l">Hakkımda</span></Link>
-                    <Link href="/contacts" className="text-white"><span className="text-l">İletişim</span></Link>
+                {/* Menü ve Tema Butonu */}
+                <div className={`navbarLinksWrapper ${menuOpen ? "open" : ""}`}>
+                    <div className="navbarLinks">
+                        <Link href="/"><span>Anasayfa</span></Link>
+                        <Link href="/projects"><span>Projeler</span></Link>
+                        <Link href="/about"><span>Hakkımda</span></Link>
+                        <Link href="/contacts"><span>İletişim</span></Link>
+                        <div className="themeButtonMobile">
+                            <ThemeButton theme={theme} toggleTheme={toggleTheme} />
+                        </div>
+                    </div>
                 </div>
-                <div className="themeButtonMobile">
+                {/* Masaüstü ThemeButton */}
+                <div className="themeButtonDesktop">
                     <ThemeButton theme={theme} toggleTheme={toggleTheme} />
                 </div>
-            </div>
-            {/* Masaüstü Tema Butonu */}
-            <div className="themeButtonDesktop">
-                <ThemeButton theme={theme} toggleTheme={toggleTheme} />
             </div>
         </nav>
     );

@@ -3,15 +3,17 @@
 .navbarNav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 1rem 3rem;
     background: var(--background);
     color: var(--foreground);
+    position: relative;
 }
 
 .navbarLinks {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
+    align-items: center;
 }
 
 .logoText {
@@ -30,8 +32,8 @@
 .logoBox {
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 100%;
+    margin-right: auto;
+    z-index: 1011;
 }
 
 .logoImage {
@@ -40,6 +42,15 @@
     margin-right: 10px;
 }
 
+.navbarRight {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 1.5rem;
+    position: relative;
+}
+
+/* Hamburger menü */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -58,26 +69,27 @@
     width: 24px;
     height: 3px;
     background: var(--foreground);
-    margin: 3px 0;
+    margin: 1.5px 0;
     border-radius: 2px;
     transition: all 0.3s;
 }
 
-.hamburger .bar.open:nth-child(1) {
+.hamburger.open .bar:nth-child(1) {
     transform: translateY(6px) rotate(45deg);
 }
 
-.hamburger .bar.open:nth-child(2) {
+.hamburger.open .bar:nth-child(2) {
     opacity: 0;
 }
 
-.hamburger .bar.open:nth-child(3) {
+.hamburger.open .bar:nth-child(3) {
     transform: translateY(-6px) rotate(-45deg);
 }
 
 .navbarLinksWrapper {
     display: flex;
     align-items: center;
+    margin-left: auto;
     gap: 1.5rem;
 }
 
@@ -88,6 +100,7 @@
 .themeButtonDesktop {
     display: flex;
     align-items: center;
+    margin-left: 1rem;
 }
 
 /* Mobil görünüm */
@@ -107,6 +120,10 @@
         line-height: 1.1rem;
     }
 
+    .navbarRight {
+        gap: 0.5rem;
+    }
+
     .hamburger {
         display: flex;
     }
@@ -121,11 +138,11 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 2rem;
         z-index: 1001;
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.3s;
+        margin-left: 0;
     }
 
     .navbarLinksWrapper.open {
