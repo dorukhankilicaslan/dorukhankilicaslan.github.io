@@ -1,14 +1,19 @@
 // app/page.tsx
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
 export default function HomePage() {
   return (
     <>
       <Navbar />
-      <main className="p-8">
-        <h1 className="text-4xl font-bold">Hoşgeldiniz</h1>
-        <p className="mt-2 text-gray-700">Portföyüme göz atabilirsiniz.</p>
+      <main>
+        <h1 className="font-bold mainPageMainText">
+          <p>Merhaba, ben Dorukhan KILIÇASLAN.</p>
+          <p>Ben İstanbul'da yaşayan bir grafik tasarımcısıyım.</p>
+          <p>Marka, kullanıcı arayüzü (UI) tasarımı, <span className="_3dText">3D</span> Modelleme üzerine odaklanıyorum.</p>
+        </h1>
       </main>
+      <Footer />
     </>
   );
 }

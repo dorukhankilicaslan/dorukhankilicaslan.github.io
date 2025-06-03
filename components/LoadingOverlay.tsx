@@ -49,6 +49,7 @@ export default function LoadingOverlay() {
                         width={50}
                         height={50}
                         className="logoImage"
+                        priority={true}
                     />
                     <span className="logoText" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                         <span>Dorukhan</span>

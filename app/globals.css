@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-  --background: #d2d2d2;
+  --background: #f0f0f0;
   --foreground: #1a1a1a;
 }
 
 .dark {
   --background: #1a1a1a;
-  --foreground: #d2d2d2;
+  --foreground: #f0f0f0;
 }
 
 body {
@@ -18,4 +18,62 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  margin: 0;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: 1200px;
+}
+
+body,
+#__next,
+.page-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 1 auto;
+}
+
+.mainPageMainText {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin: 3rem 0;
+  color: var(--foreground);
+}
+
+._3dText {
+  font-weight: 700;
+  color: var(--foreground);
+  letter-spacing: 0.04em;
+  text-shadow:
+    2px 2px 1px var(--background), 2px 2px 0 var(--foreground), 3px 3px 2px var(--foreground), 4px 4px 8px var(--foreground), 3px 3px 2px var(--foreground);
+  transform: skew(-5deg, 0deg);
+  display: inline-block;
+}
+
+
+@media (min-width: 768px) {
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .mainPageMainText {
+    font-size: 1.4rem;
+    line-height: 1.25;
+  }
 }

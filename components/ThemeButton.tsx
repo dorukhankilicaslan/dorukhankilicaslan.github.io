@@ -16,7 +16,7 @@ export default function ThemeButton({ theme, toggleTheme }: ThemeButtonProps) {
                 onClick={toggleTheme}
                 className="relative flex items-center justify-center rounded-xl p-2 text-neutral-500 hover:shadow-input dark:text-neutral-500 w-8 h-8 overflow-hidden"
                 aria-label="Toggle theme"
-                style={{ width: 32, height: 32 }}
+                style={{ width: "auto", height: 32, marginTop: "5px", cursor: "pointer" }}
             >
                 {theme === "dark" ?
                     <span className={`absolute inset-0 flex items-center justify-center transition-opacity duration-500 ease-in-out`}                            >

@@ -8,11 +8,15 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Dorukhan Portfolio",
   description: "Grafik, 3D ve Yazılım Projeleri",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="tr">
+      <head />
       <body>
         <ThemeProvider>
           <LoadingOverlay />

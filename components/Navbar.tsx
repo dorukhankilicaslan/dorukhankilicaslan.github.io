@@ -1,15 +1,30 @@
 /* components/Navbar.css */
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "../components/ThemeContext";
 import ThemeButton from "../components/ThemeButton";
+import { usePathname } from "next/navigation";
 import "./Navbar.css";
 
 export default function Navbar() {
     const { theme, toggleTheme } = useTheme();
     const [menuOpen, setMenuOpen] = useState(false);
+    const pathname = usePathname();
+
+    // Hamburger menü açıkken scroll'u kapat
+    useEffect(() => {
+        if (menuOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+        // Temizlik: component unmount olursa scroll'u geri aç
+        return () => {
+            document.body.style.overflow = "";
+        };
+    }, [menuOpen]);
 
     return (
         <nav className="navbarNav">
@@ -23,6 +38,7 @@ export default function Navbar() {
                     width={50}
                     height={50}
                     className="logoImage"
+                    priority={true}
                 />
                 <span className="logoText">
                     <span>Dorukhan</span>
@@ -46,10 +62,10 @@ export default function Navbar() {
                 {/* Menü ve Tema Butonu */}
                 <div className={`navbarLinksWrapper ${menuOpen ? "open" : ""}`}>
                     <div className="navbarLinks">
-                        <Link href="/"><span>Anasayfa</span></Link>
-                        <Link href="/projects"><span>Projeler</span></Link>
-                        <Link href="/about"><span>Hakkımda</span></Link>
-                        <Link href="/contacts"><span>İletişim</span></Link>
+                        <Link href="/"><span className={`nav-link${pathname === "/" ? " active" : ""}`}>Anasayfa</span></Link>
+                        <Link href="/projects"><span className={`nav-link${pathname === "/projects" ? " active" : ""}`}>Projeler</span></Link>
+                        <Link href="/about"><span className={`nav-link${pathname === "/about" ? " active" : ""}`}>Hakkımda</span></Link>
+                        <Link href="/contacts"><span className={`nav-link${pathname === "/contacts" ? " active" : ""}`}>İletişim</span></Link>
                         <div className="themeButtonMobile">
                             <ThemeButton theme={theme} toggleTheme={toggleTheme} />
                         </div>

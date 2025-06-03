@@ -1,38 +1,33 @@
 // components/Footer.tsx
 
-import Image from "next/image";
+import Link from "next/link";
+import "./Footer.css";
 
 export default function Footer() {
-
     return (
-        <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-            <a
-                className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-                href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <Image aria-hidden src="/file.svg" alt="File icon" width={16} height={16} />
-                Learn
-            </a>
-            <a
-                className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-                href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <Image aria-hidden src="/window.svg" alt="Window icon" width={16} height={16} />
-                Examples
-            </a>
-            <a
-                className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-                href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <Image aria-hidden src="/globe.svg" alt="Globe icon" width={16} height={16} />
-                Go to nextjs.org →
-            </a>
+        <footer className="footer">
+            <div className="footer-section">
+                <div className="footer-title"></div>
+                <div className="footer-contact">
+                    <span>Telefon: +90 530 XX XX</span>
+                    <span>E-posta: mail@ornek.com</span>
+                </div>
+                <div className="footer-copyright">
+                    © {new Date().getFullYear()}
+                </div>
+            </div>
+
         </footer>
     );
 }
+
+/*
+<div className="footer-section">
+                <nav className="footer-nav">
+                    <Link href="/"><span className="footer-nav-link">Anasayfa</span></Link>
+                    <Link href="/projects"><span className="footer-nav-link">Projeler</span></Link>
+                    <Link href="/about"><span className="footer-nav-link">Hakkımda</span></Link>
+                    <Link href="/contacts"><span className="footer-nav-link">İletişim</span></Link>
+                </nav>
+            </div>
+            */
