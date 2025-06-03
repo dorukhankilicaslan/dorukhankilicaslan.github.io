@@ -6,15 +6,6 @@ import "./Navbar.css";
 import Link from "next/link";
 import Image from "next/image";
 
-import { Poppins } from 'next/font/google';
-
-const poppins = Poppins({
-    subsets: ['latin'],
-    weight: ['700'], // ihtiyacına göre ayarla
-    variable: '--font-poppins', // CSS değişkeni tanımlarsan globalde kullanırsın
-});
-
-
 export default function Navbar() {
     return (
         <nav className="bg-black-80 shadow py-4 px-8 flex justify-between">
