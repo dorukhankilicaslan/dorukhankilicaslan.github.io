@@ -1,0 +1,98 @@
+.content {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.text-shadows {
+    text-shadow: 1px 1px 0 var(--color-secondary), 2px 2px 0 var(--color-tertiary),
+        3px 3px 0 var(--color-quaternary), 4px 4px 0 var(--color-quinary);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    /* min-width: 3.5em; */
+    /* padding: 0 0.2em; */
+    /* Kenarlardan boşluk */
+    text-align: center;
+    margin: 0;
+    color: var(--color-primary);
+    animation: shadows 3s linear infinite;
+    letter-spacing: 0.4rem;
+    display: inline-block;
+    will-change: transform, text-shadow;
+}
+
+@keyframes shadows {
+    0% {
+        transform: translate(2px, 2px) skewY(-6deg) rotate3d(1, 1, 0, 6deg);
+        text-shadow: 1px 1px 0 var(--color-secondary),
+            2px 2px 0 var(--color-tertiary),
+            3px 3px 0 var(--color-quaternary),
+            4px 4px 0 var(--color-quinary);
+    }
+
+    25% {
+        transform: translate(2px, -2px) skewY(6deg) rotate3d(1, -1, 0, 6deg);
+        text-shadow: 1px -1px 0 var(--color-secondary),
+            2px -2px 0 var(--color-tertiary),
+            3px -3px 0 var(--color-quaternary),
+            4px -4px 0 var(--color-quinary);
+    }
+
+    50% {
+        transform: translate(-2px, -2px) skewY(-6deg) rotate3d(-1, -1, 0, 6deg);
+        text-shadow: -1px -1px 0 var(--color-secondary),
+            -2px -2px 0 var(--color-tertiary),
+            -3px -3px 0 var(--color-quaternary),
+            -4px -4px 0 var(--color-quinary);
+    }
+
+    75% {
+        transform: translate(-2px, 2px) skewY(6deg) rotate3d(-1, 1, 0, 6deg);
+        text-shadow: -1px 1px 0 var(--color-secondary),
+            -2px 2px 0 var(--color-tertiary),
+            -3px 3px 0 var(--color-quaternary),
+            -4px 4px 0 var(--color-quinary);
+    }
+
+    100% {
+        transform: translate(2px, 2px) skewY(-6deg) rotate3d(1, 1, 0, 6deg);
+        text-shadow: 1px 1px 0 var(--color-secondary),
+            2px 2px 0 var(--color-tertiary),
+            3px 3px 0 var(--color-quaternary),
+            4px 4px 0 var(--color-quinary);
+    }
+}
+
+/*
+  --color-primary: #5192ED;
+  --color-secondary: #69A1F0;
+  --color-tertiary: #7EAEF2;
+  --color-quaternary: #90BAF5;
+  --color-quinary: #A2C4F5;
+*/
+
+
+/*
+
+
+._3dText {
+  font-weight: 700;
+  color: var(--foreground);
+  letter-spacing: 0.04em;
+  text-shadow:
+    2px 2px 1px var(--background), 2px 2px 0 var(--foreground), 3px 3px 2px var(--foreground), 4px 4px 8px var(--foreground), 3px 3px 2px var(--foreground);
+  transform: skew(-5deg, 0deg);
+  display: inline-block;
+}
+
+*/
+
+@media (max-width: 600px) {
+    .text-shadows {
+        font-size: 1.4rem;
+        /* .mainPageMainText mobil ile aynı */
+        line-height: 1.25;
+        min-width: 2em;
+    }
+}

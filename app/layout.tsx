@@ -1,8 +1,8 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-import LoadingOverlay from "../components/LoadingOverlay";
 import { ThemeProvider } from "../components/ThemeContext";
-
+import BodyThemeWrapper from "../components/BodyThemeWrapper";
+import ClientLayoutWrapper from "../components/ClientLayoutWrapper";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,12 +17,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="tr">
       <head />
-      <body>
-        <ThemeProvider>
-          <LoadingOverlay />
-          {children}
-        </ThemeProvider>
-      </body>
-    </html >
+      <ThemeProvider>
+        <BodyThemeWrapper>
+          <ClientLayoutWrapper>{children}</ClientLayoutWrapper>
+        </BodyThemeWrapper>
+      </ThemeProvider>
+    </html>
   );
 }

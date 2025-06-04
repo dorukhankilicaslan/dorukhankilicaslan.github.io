@@ -22,14 +22,13 @@ export default function LoadingOverlay() {
             style={{
                 position: "fixed",
                 inset: 0,
-                background: "#1a1a1a", // Her zaman siyah
-                color: "#d2d2d2",      // Her zaman açık gri
+                background: "#1a1a1a",
+                color: "#d2d2d2",
                 zIndex: 9999,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 pointerEvents: fadeOut ? "none" : "auto",
-                // Dış div'e opacity animasyonu VERME!
             }}
         >
             <span
@@ -42,7 +41,7 @@ export default function LoadingOverlay() {
                     transition: "opacity 400ms cubic-bezier(0.4,0,0.2,1)",
                 }}
             >
-                <span className="logoBox">
+                <span className="logoBox" style={{ display: "flex", alignItems: "center", gap: 12 }}>
                     <Image
                         src={"https://res.cloudinary.com/ds4suhwnb/image/upload/v1748902508/DK_LogoWhite_cgyafw.png"}
                         alt="Logo"
@@ -51,12 +50,12 @@ export default function LoadingOverlay() {
                         className="logoImage"
                         priority={true}
                     />
-                    <span className="logoText" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                    <span className="logoText" style={{ display: "flex", flexDirection: "column", alignItems: "flex-start" }}>
                         <span>Dorukhan</span>
                         <span>KILIÇASLAN</span>
                     </span>
                 </span>
-                <span style={{ fontSize: 24, marginTop: 12 }}>Yükleniyor...</span>
+                <span style={{ fontSize: 20, marginTop: 12 }}>Yükleniyor...</span>
             </span>
         </div>
     );

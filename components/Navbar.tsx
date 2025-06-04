@@ -8,6 +8,15 @@ import ThemeButton from "../components/ThemeButton";
 import { usePathname } from "next/navigation";
 import "./Navbar.css";
 
+/*
+
+
+                <span className="logoText">
+                    <span>Dorukhan</span>
+                    <span>KILIÇASLAN</span>
+                </span>
+                
+*/
 export default function Navbar() {
     const { theme, toggleTheme } = useTheme();
     const [menuOpen, setMenuOpen] = useState(false);
@@ -40,10 +49,7 @@ export default function Navbar() {
                     className="logoImage"
                     priority={true}
                 />
-                <span className="logoText">
-                    <span>Dorukhan</span>
-                    <span>KILIÇASLAN</span>
-                </span>
+
             </Link>
 
             {/* Sağda hamburger ve menü */}

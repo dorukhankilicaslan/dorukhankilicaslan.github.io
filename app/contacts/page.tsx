@@ -1,4 +1,5 @@
 // app/contacts/page.tsx
+import Footer from "@/components/Footer";
 import Navbar from "../../components/Navbar";
 
 export default function Contacts() {
@@ -8,6 +9,7 @@ export default function Contacts() {
             <main className="p-8">
                 <h1 className="text-4xl font-bold">Contacts</h1>
             </main>
+            <Footer />
         </>
     );
 }

@@ -7,11 +7,6 @@ export default function Footer() {
     return (
         <footer className="footer">
             <div className="footer-section">
-                <div className="footer-title"></div>
-                <div className="footer-contact">
-                    <span>Telefon: +90 530 XX XX</span>
-                    <span>E-posta: mail@ornek.com</span>
-                </div>
                 <div className="footer-copyright">
                     © {new Date().getFullYear()}
                 </div>
@@ -22,6 +17,12 @@ export default function Footer() {
 }
 
 /*
+<div className="footer-title"></div>
+                <div className="footer-contact">
+                    <span>Telefon: +90 530 XX XX</span>
+                    <span>E-posta: mail@ornek.com</span>
+                </div>
+                
 <div className="footer-section">
                 <nav className="footer-nav">
                     <Link href="/"><span className="footer-nav-link">Anasayfa</span></Link>

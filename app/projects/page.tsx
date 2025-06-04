@@ -1,4 +1,5 @@
 // app/projects/page.tsx
+import Footer from "@/components/Footer";
 import Navbar from "../../components/Navbar";
 
 export default function Projects() {
@@ -8,6 +9,7 @@ export default function Projects() {
             <main className="p-8">
                 <h1 className="text-4xl font-bold">Projects Page</h1>
             </main>
+            <Footer />
         </>
     );
 }

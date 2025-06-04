@@ -1,18 +1,34 @@
 @import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+/* globals.css (en üstte) */
 :root {
   --background: #f0f0f0;
   --foreground: #1a1a1a;
+
+  --color-primary: #222;
+  --color-secondary: #444;
+  --color-tertiary: #666;
+  --color-quaternary: #888;
+  --color-quinary: #bbb;
 }
 
 .dark {
   --background: #1a1a1a;
   --foreground: #f0f0f0;
+
+  --color-primary: #fff;
+  --color-secondary: #e0e0e0;
+  --color-tertiary: #cccccc;
+  --color-quaternary: #b3b3b3;
+  --color-quinary: #999999;
 }
 
 body {
-  background: var(--background);
+  position: relative;
+  background: none !important;
+  /* Arka planı kaldır */
+  overflow-x: hidden;
   color: var(--foreground);
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,6 +43,37 @@ body {
   max-width: 1200px;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: var(--dynamic-bg, url('https://res.cloudinary.com/ds4suhwnb/image/upload/v1748996438/503b174d539eb6e6a2a8ceca6ced9b04_ztnhtj.jpg'));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.6;
+  transition: filter 0.3s, opacity 0.3s;
+  pointer-events: none;
+  filter: none;
+  /* default */
+}
+
+body.light::before {
+  filter: invert(1) hue-rotate(180deg);
+  opacity: 0.5;
+}
+
+body.dark::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.6);
+  /* veya 0.7, isteğe göre */
+  pointer-events: none;
+}
+
 body,
 #__next,
 .page-root {
@@ -39,23 +86,32 @@ main {
   flex: 1 1 auto;
 }
 
+.text3d-inline-wrapper {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  line-height: 1;
+  /* Gerekirse line-height ve height ayarı ekleyebilirsin */
+}
+
 .mainPageMainText {
   font-size: 2.5rem;
-  line-height: 1.2;
+  line-height: 1.5;
   margin: 3rem 0;
   color: var(--foreground);
 }
 
-._3dText {
-  font-weight: 700;
-  color: var(--foreground);
-  letter-spacing: 0.04em;
-  text-shadow:
-    2px 2px 1px var(--background), 2px 2px 0 var(--foreground), 3px 3px 2px var(--foreground), 4px 4px 8px var(--foreground), 3px 3px 2px var(--foreground);
-  transform: skew(-5deg, 0deg);
-  display: inline-block;
+.dynamic-bg-layer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -3;
+  pointer-events: none;
+  background: var(--dynamic-bg) center/cover no-repeat;
+  opacity: var(--bg-opacity);
+  transition: opacity 0.3s;
 }
-
 
 @media (min-width: 768px) {
   .container {
