@@ -1,13 +1,17 @@
-// app/layout.tsx
-import type { Metadata } from "next";
-import LoadingOverlay from "../components/LoadingOverlay";
-import { ThemeProvider } from "../components/ThemeContext";
+import ClientRoot from "@/components/ClientRoot";
 
-import "./globals.css";
-
-export const metadata: Metadata = {
-  title: "Dorukhan Portfolio",
-  description: "Grafik, 3D ve Yazılım Projeleri",
+export const metadata = {
+  title: "Dorukhan KILIÇASLAN | Portföy",
+  keywords: [
+    "Dorukhan Kılıçaslan",
+    "Portföy",
+    "Web Geliştirici",
+    "Yazılım Mühendisi",
+    "Frontend Developer",
+    "Backend Developer",
+    "Full Stack Developer",
+  ],
+  description: "Dorukhan Kılıçaslan'ın kişisel portföyü",
   icons: {
     icon: "/favicon.ico",
   },
@@ -15,14 +19,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="tr">
-      <head />
+    <html lang="tr" className="scroll-smooth">
       <body>
-        <ThemeProvider>
-          <LoadingOverlay />
-          {children}
-        </ThemeProvider>
+        <ClientRoot>{children}</ClientRoot>
       </body>
-    </html >
+    </html>
   );
 }
