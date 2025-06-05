@@ -10,11 +10,6 @@ export default function SpotlightBackground() {
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
 
-        // Global renkleri oku
-        const root = getComputedStyle(document.documentElement);
-        const bgColor = root.getPropertyValue("--background").trim() || "#0a192f";
-        const spotlightColor = root.getPropertyValue("--foreground").trim() || "#94a3b8";
-
         function setCanvasSize() {
             if (!canvas) return;
             canvas.width = window.innerWidth;
