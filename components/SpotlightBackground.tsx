@@ -4,11 +4,14 @@ import { useEffect, useRef } from "react";
 export default function SpotlightBackground() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
+    function getColorVar(name: string, fallback: string) {
+        const value = getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+        return value && value !== "" ? value : fallback;
+    }
+
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
-        const ctx = canvas.getContext("2d");
-        if (!ctx) return;
 
         function setCanvasSize() {
             if (!canvas) return;
@@ -26,10 +29,9 @@ export default function SpotlightBackground() {
             const ctx = canvas.getContext("2d");
             if (!ctx) return;
 
-            // Renkleri her seferinde oku (dark mode için)
-            const root = getComputedStyle(document.documentElement);
-            const bgColor = root.getPropertyValue("--background").trim() || "#0a192f";
-            const spotlightColor = root.getPropertyValue("--foreground").trim() || "#94a3b8";
+            // Her zaman fallback ile oku
+            const bgColor = getColorVar("--background", "#0a192f");
+            const spotlightColor = getColorVar("--foreground", "#94a3b8");
 
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = bgColor;
@@ -51,6 +53,11 @@ export default function SpotlightBackground() {
 
         draw(window.innerWidth / 2, window.innerHeight / 2);
         window.addEventListener("mousemove", handleMouseMove);
+
+        window.addEventListener("resize", () => {
+            setCanvasSize();
+            draw(window.innerWidth / 2, window.innerHeight / 2);
+        });
 
         return () => {
             window.removeEventListener("mousemove", handleMouseMove);

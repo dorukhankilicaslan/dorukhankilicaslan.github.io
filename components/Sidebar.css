@@ -138,11 +138,9 @@ a:hover .nav-text {
 @media (max-width: 900px) {
     .onepage-sidebar {
         position: static !important;
-        top: unset !important;
-        min-height: unset;
+        top: 0 !important;
         padding: 2rem 0 2rem 0;
-        box-shadow: none !important;
-        height: auto;
+        width: 100% !important;
     }
 
     .sidebar-header {
