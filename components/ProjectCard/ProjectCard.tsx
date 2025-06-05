@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import "./ProjectCard.css";
 
 interface ProjectCardProps {
@@ -28,7 +29,14 @@ export default function ProjectCard({
                         tabIndex={0}
                         aria-label={`Proje ana görseli: ${title}`}
                     >
-                        <img src={mainImage} alt={`Proje ana görseli: ${title}`} />
+                        <Image
+                            src={mainImage}
+                            alt={`Proje ana görseli: ${title}`}
+                            width={400}
+                            height={300}
+                            style={{ width: "100%", height: "auto" }}
+                            priority
+                        />
                     </button>
                 </div>
                 <div className="project-card-content">
@@ -45,7 +53,13 @@ export default function ProjectCard({
                                 aria-label={`Proje görseli ${i + 2}`}
                             >
                                 {img ? (
-                                    <img src={img} alt={`Proje görseli ${i + 2}`} />
+                                    <Image
+                                        src={img}
+                                        alt={`Proje görseli ${i + 2}`}
+                                        width={80}
+                                        height={60}
+                                        style={{ width: "100%", height: "auto" }}
+                                    />
                                 ) : (
                                     <span className="project-gallery-placeholder" />
                                 )}

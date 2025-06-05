@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import ExperienceCard from "./ExperienceCard/ExperienceCard";
 
 interface ExperienceSectionProps {
