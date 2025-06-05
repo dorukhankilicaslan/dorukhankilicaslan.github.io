@@ -1,35 +1,27 @@
-"use client";
-import { useEffect, useState } from "react";
-import SpotlightBackground from "@/components/SpotlightBackground";
-import LoadingOverlay from "@/components/LoadingOverlay";
+import ClientRoot from "@/components/ClientRoot";
 
+export const metadata = {
+  title: "Dorukhan KILIÇASLAN | Portföy",
+  keywords: [
+    "Dorukhan Kılıçaslan",
+    "Portföy",
+    "Web Geliştirici",
+    "Yazılım Mühendisi",
+    "Frontend Developer",
+    "Backend Developer",
+    "Full Stack Developer",
+  ],
+  description: "Dorukhan Kılıçaslan'ın kişisel portföyü",
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    document.body.classList.add("onepage-body");
-    return () => {
-      document.body.classList.remove("onepage-body");
-    };
-  }, []);
-
-  useEffect(() => {
-    const handle = () => setLoading(false);
-    if (document.readyState === "complete") {
-      setLoading(false);
-    } else {
-      window.addEventListener("load", handle);
-      return () => window.removeEventListener("load", handle);
-    }
-  }, []);
-
   return (
     <html lang="tr" className="scroll-smooth">
       <body>
-        <SpotlightBackground />
-        {loading && <LoadingOverlay />}
-        {children}
+        <ClientRoot>{children}</ClientRoot>
       </body>
     </html>
   );

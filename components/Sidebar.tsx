@@ -17,7 +17,7 @@ export default function Sidebar({ activeSection }: SidebarProps) {
                         drkhn.dk@gmail.com
                     </a>
                     <a
-                        href="/resume.pdf"
+                        href="/dk_resume.pdf"
                         className="contact-resume"
                         target="_blank"
                         rel="noopener noreferrer"
