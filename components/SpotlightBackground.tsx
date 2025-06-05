@@ -16,6 +16,7 @@ export default function SpotlightBackground() {
         const spotlightColor = root.getPropertyValue("--foreground").trim() || "#94a3b8";
 
         function setCanvasSize() {
+            if (!canvas) return;
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             canvas.style.width = window.innerWidth + "px";
