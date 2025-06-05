@@ -131,4 +131,12 @@ html {
     margin-bottom: 0;
     padding: 0 0rem;
   }
+
+  .container {
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 0 24px;
+  }
 }

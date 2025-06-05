@@ -1,9 +1,18 @@
 .project-card {
-    border: 1px solid var(--border, #233554);
-    background: rgba(17, 34, 64, 0.6);
-    margin-bottom: 2rem;
+    background: var(--experience-background-hover);
+    border: 1px solid var(--background);
+    box-shadow: 0 8px 32px 0 rgba(2, 12, 27, 0.18);
     border-radius: 6px;
-    /* var(--sidebar-bg) ile değiştirilebilir */
+    padding: 0;
+    margin-bottom: 2rem;
+    /*transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;*/
+    /*box-shadow: 0 4px 24px 0 rgba(2, 12, 27, 0.12);*/
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 1;
 }
 
 .project-card-inner {
@@ -104,10 +113,21 @@
     justify-content: center;
     transition: box-shadow 0.2s;
     background: var(--background, #0f172a);
+    object-fit: cover;
 }
 
 .project-gallery-slot img,
-.project-gallery-placeholder {
+.project-gallery-placeholder,
+.project-gallery .project-main-image-btn img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+/* Galerideki ana görselin img'si de diğerleri gibi orantılı görünsün */
+.project-gallery .project-main-image-btn img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -121,13 +141,36 @@
         padding: 1.25rem;
     }
 
-    .project-card-image {
-        width: 100%;
-        height: 160px;
-        margin-bottom: 0.5rem;
+    .project-card-image-large {
+        display: none;
     }
 
     .project-card-content {
         padding-left: 0;
     }
+
+    .project-gallery {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
+    }
+
+    /* Mobilde galeride ana görseli göster */
+    .project-gallery .project-main-image-btn {
+        display: flex !important;
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        overflow: hidden;
+        background: var(--background, #0f172a);
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+}
+
+/* Masaüstünde galeride ana görseli gösterme */
+.project-gallery .project-main-image-btn {
+    display: none;
 }
