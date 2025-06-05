@@ -1,14 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,400;1,700&display=swap');
+
 :root {
-  --background: #0f172a;
-  --sidebar-bg: #112240;
-  --foreground: #ccd6f6;
+  --background: rgb(15, 23, 42);
+  --sidebar-bg: #0d1742;
+  --foreground: #e5e7eb;
   --secondary: #8892b0;
-  --accent: rgb(94, 234, 212);
+  --accent: #5eead4;
   --border: #233554;
+  --spotlight: rgba(29, 78, 216, 0.15);
   --font-main: Calibre, Inter, San Francisco, SF Pro Text, -apple-system, system-ui, sans-serif;
   --experience-background: rgba(17, 34, 64, 0.6);
   /* ExperienceCard için özel arka plan */
-  --experience-background-hover: rgba(17, 34, 64, 0.85);
+  --experience-background-hover: rgba(255, 255, 255, 0.025);
 }
 
 html,

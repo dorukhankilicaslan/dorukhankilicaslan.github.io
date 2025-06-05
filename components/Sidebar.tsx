@@ -16,7 +16,7 @@ export default function Sidebar({ activeSection }: SidebarProps) {
                 <h1 className="sidebar-hero">Dorukhan KILIÇASLAN</h1>
                 <h2 className="sidebar-role">Grafik / Web Tasarım</h2>
                 <div className="sidebar-contact">
-                    <a href="mailto:drkhn.dk@gmail.com" className="contact-email">
+                    <a href="mailto:drkhn.dk@gmail.com" className="contact-email" hidden>
                         drkhn.dk@gmail.com
                     </a>
                     <a
@@ -25,11 +25,12 @@ export default function Sidebar({ activeSection }: SidebarProps) {
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        Özgeçmişi Görüntüle
+                        Özgeçmiş Görüntüle
                     </a>
                 </div>
                 <p className="sidebar-desc">
-                    “Çok disiplinli bir tasarımcı olarak, netlik ve kullanıcı deneyimini ön planda tutuyorum.”
+                    Çok disiplinli bir tasarımcı olarak,<br />
+                    netlik ve kullanıcı deneyimini ön planda tutuyorum.
                 </p>
 
                 <nav className="sidebar-nav" aria-label="In-page jump links">

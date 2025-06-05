@@ -1,10 +1,12 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+
 import SpotlightBackground from "@/components/SpotlightBackground";
+
 import "./globals.css";
+
 import AboutSection from "@/components/AboutSection";
 import ExperienceSection from "@/components/ExperienceSection";
-
 import Sidebar from "@/components/Sidebar";
 import ProjectsSection from "@/components/ProjectsSection";
 

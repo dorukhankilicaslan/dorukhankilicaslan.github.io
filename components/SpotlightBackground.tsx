@@ -31,15 +31,14 @@ export default function SpotlightBackground() {
 
             // Her zaman fallback ile oku
             const bgColor = getColorVar("--background", "#0a192f");
-            const spotlightColor = getColorVar("--foreground", "#94a3b8");
+            const spotlightColor = getColorVar("--spotlight", "#94a3b8");
 
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = bgColor;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            const gradient = ctx.createRadialGradient(x, y, 0, x, y, 500);
-            gradient.addColorStop(0, hexToRgba(spotlightColor, 0.08));
-            gradient.addColorStop(0.4, hexToRgba(spotlightColor, 0.04));
+            const gradient = ctx.createRadialGradient(x, y, 0, x, y, 900);
+            gradient.addColorStop(0, spotlightColor);
             gradient.addColorStop(1, hexToRgba(bgColor, 0));
             ctx.globalCompositeOperation = "lighter";
             ctx.fillStyle = gradient;
