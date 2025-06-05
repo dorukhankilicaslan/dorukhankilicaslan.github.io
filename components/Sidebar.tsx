@@ -29,8 +29,7 @@ export default function Sidebar({ activeSection }: SidebarProps) {
                     </a>
                 </div>
                 <p className="sidebar-desc">
-                    Çok disiplinli bir tasarımcı olarak,<br />
-                    netlik ve kullanıcı deneyimini ön planda tutuyorum.
+                    Çok disiplinli bir tasarımcı olarak,<br className="sidebar-desc-text" /> netlik ve kullanıcı deneyimini ön planda tutuyorum.
                 </p>
 
                 <nav className="sidebar-nav" aria-label="In-page jump links">

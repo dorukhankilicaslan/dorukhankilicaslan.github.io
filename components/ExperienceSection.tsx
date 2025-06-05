@@ -43,7 +43,7 @@ export default function ExperienceSection({ experienceRef }: ExperienceSectionPr
             date: "2016 - 2017",
             description:
                 "Harita kadastro projelerinde sahadan gelen verilerin AutoCAD ile dijital ortama aktarılması ve pafta düzenlemeleri gibi teknik işlerde görev aldım.",
-            technologies: ["AutoCAD", "NetCAD", "ArcGIS", "Total Station (Laica Builder 505 - 509 - TS 06)", "Spectra Precision SP80 GNSS Alıcısı", "Nivo"],
+            technologies: ["AutoCAD", "NetCAD", "ArcGIS", "Total Station (Laica)", "Spectra GNSS", "Nivo"],
         },
         {
             position: "Öğrenci",

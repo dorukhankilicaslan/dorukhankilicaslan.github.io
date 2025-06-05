@@ -155,25 +155,7 @@ a:hover .nav-text {
     color: var(--accent, rgb(94, 234, 212));
 }
 
-/* Sidebar başlığı en üstte ve sticky olmasın, mobilde linkleri gizle */
-@media (max-width: 900px) {
-    .onepage-sidebar {
-        position: static !important;
-        top: 0 !important;
-        padding: 2rem 0 2rem 0;
-        width: 100% !important;
-    }
 
-    .sidebar-header {
-        position: static !important;
-        min-height: unset;
-        padding: 2rem 0 2rem 0;
-    }
-
-    .sidebar-nav {
-        display: none !important;
-    }
-}
 
 .social-icons {
     display: flex;
@@ -207,4 +189,38 @@ a:hover .nav-text {
     width: 20px;
     height: 20px;
     display: block;
+}
+
+/* Sidebar başlığı en üstte ve sticky olmasın, mobilde linkleri gizle */
+@media (max-width: 900px) {
+    .onepage-sidebar {
+        position: static !important;
+        top: 0 !important;
+        padding: 2rem 0 2rem 0;
+        width: 100% !important;
+    }
+
+    .sidebar-desc-text {
+        display: none;
+    }
+
+    .social-icons {
+        justify-content: center;
+        margin-top: 1.5rem;
+    }
+
+    .sidebar-role {
+        margin-bottom: 1rem;
+    }
+
+    .sidebar-header {
+        position: static !important;
+        min-height: unset;
+
+        padding: 2rem 0 2rem 0;
+    }
+
+    .sidebar-nav {
+        display: none !important;
+    }
 }
