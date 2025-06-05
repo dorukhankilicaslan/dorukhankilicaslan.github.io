@@ -10,6 +10,11 @@ export default function SpotlightBackground() {
         const ctx = canvas.getContext("2d");
         if (!ctx) return;
 
+        // Global renkleri oku
+        const root = getComputedStyle(document.documentElement);
+        const bgColor = root.getPropertyValue("--background").trim() || "#0a192f";
+        const spotlightColor = root.getPropertyValue("--foreground").trim() || "#94a3b8";
+
         function setCanvasSize() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -22,17 +27,17 @@ export default function SpotlightBackground() {
 
         function draw(x: number, y: number) {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "#0a192f";
+            ctx.fillStyle = bgColor;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Brittany tarzı: açık mavi, geniş ve yumuşak spotlight
-            const gradient = ctx.createRadialGradient(x, y, 0, x, y, 300);
-            gradient.addColorStop(0, "rgba(26, 67, 128, 0.1)");
-            gradient.addColorStop(0.5, "rgba(18,45,85,0.05)");
-            gradient.addColorStop(1, "rgba(10,25,47,0)");
+            // Spotlight için global foreground rengini kullan
+            const gradient = ctx.createRadialGradient(x, y, 0, x, y, 500);
+            gradient.addColorStop(0, `${hexToRgba(spotlightColor, 0.08)}`);
+            gradient.addColorStop(0.4, `${hexToRgba(spotlightColor, 0.04)}`);
+            gradient.addColorStop(1, `${hexToRgba(bgColor, 0)}`);
             ctx.globalCompositeOperation = "lighter";
             ctx.fillStyle = gradient;
-            ctx.fillRect(x - 600, y - 600, 1200, 1200);
+            ctx.fillRect(x - 700, y - 700, 1400, 1400);
             ctx.globalCompositeOperation = "source-over";
         }
 
@@ -49,6 +54,17 @@ export default function SpotlightBackground() {
         };
     }, []);
 
+    // HEX -> RGBA yardımcı fonksiyonu
+    function hexToRgba(hex: string, alpha: number) {
+        let c = hex.replace("#", "").trim();
+        if (c.length === 3) c = c[0] + c[0] + c[1] + c[1] + c[2] + c[2];
+        const num = parseInt(c, 16);
+        const r = (num >> 16) & 255;
+        const g = (num >> 8) & 255;
+        const b = num & 255;
+        return `rgba(${r},${g},${b},${alpha})`;
+    }
+
     return (
         <canvas
             ref={canvasRef}
@@ -59,7 +75,6 @@ export default function SpotlightBackground() {
                 pointerEvents: "none",
                 width: "100vw",
                 height: "100vh",
-                /* filter: "blur(60px)",  // KALDIR! */
             }}
         />
     );

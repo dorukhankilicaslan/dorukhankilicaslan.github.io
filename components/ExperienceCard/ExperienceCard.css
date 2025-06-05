@@ -1,0 +1,112 @@
+.experience-card {
+    border: 1px solid rgba(100, 255, 218, 0.08);
+    background: var(--experience-background);
+    border-radius: 12px;
+    padding: 0;
+    margin-bottom: 2rem;
+    transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 24px 0 rgba(2, 12, 27, 0.12);
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 1;
+}
+
+.experience-card:hover,
+.experience-card:focus-within {
+    background: var(--experience-background-hover);
+    border: 1px solid var(--foreground, #e2e8f0);
+    box-shadow: 0 8px 32px 0 rgba(2, 12, 27, 0.18);
+}
+
+.experience-card.inactive {
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.experience-card.active {
+    opacity: 1;
+}
+
+.experience-card-inner {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 0;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.experience-card-date {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 100%;
+}
+
+.experience-card-date span {
+    display: inline-block;
+    /* sadece hafif arka plan */
+    color: var(--foreground);
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: none;
+}
+
+.experience-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.experience-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: var(--foreground, #ccd6f6);
+}
+
+.experience-company a {
+    color: var(--foreground, #ccd6f6);
+    text-decoration: none;
+}
+
+.experience-desc {
+    color: var(--secondary, #8892b0);
+    font-size: 0.875rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.experience-tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.experience-tech-pill {
+    background: rgba(94, 234, 212, 0.1);
+    /* var(--accent) ile değiştirilebilir */
+    color: var(--accent, rgb(94, 234, 212));
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 999px;
+    padding: 0.15rem 0.5rem;
+    white-space: nowrap;
+    /*border: 1px solid var(--accent, #64ffda);*/
+    transition: background 0.2s, color 0.2s;
+}
+
+@media (max-width: 600px) {
+    .experience-card-inner {
+        grid-template-columns: 1fr;
+        padding: 1.25rem;
+    }
+
+    .experience-card-date {
+        margin-bottom: 0.5rem;
+    }
+}
