@@ -1,8 +1,6 @@
 import React from "react";
 import "./Sidebar.css";
 import { FaGithub, FaLinkedin, FaCodepen, FaInstagram } from "react-icons/fa";
-import { FaI } from "react-icons/fa6";
-
 
 interface SidebarProps {
     activeSection: string;
