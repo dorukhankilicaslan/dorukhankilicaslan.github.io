@@ -47,7 +47,7 @@ body {
 .main-content {
   width: 50%;
   min-width: 0;
-  margin-top: 96px;
+  margin-top: 4rem;
   margin-bottom: 96px;
 }
 
@@ -105,4 +105,12 @@ html {
   color: var(--secondary);
   font-size: 1rem;
   text-size-adjust: 100%;
+}
+
+#experience {
+  scroll-margin-top: 3.5rem;
+}
+
+#projects {
+  scroll-margin-top: 3.5rem;
 }

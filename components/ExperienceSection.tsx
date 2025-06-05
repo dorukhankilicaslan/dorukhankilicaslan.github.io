@@ -65,7 +65,6 @@ export default function ExperienceSection({ experienceRef }: ExperienceSectionPr
             id="experience"
             ref={experienceRef}
             className="onepage-section experience-list"
-            style={{ scrollMarginTop: "4.5rem" }}
         >
             {experiences.map((exp, i) => (
                 <ExperienceCard

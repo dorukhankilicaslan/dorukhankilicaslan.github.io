@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import SpotlightBackground from "@/components/SpotlightBackground";
 import LoadingOverlay from "@/components/LoadingOverlay";
+import { LocalizationProvider } from "./LocalizationProvider";
 
 export default function ClientRoot({ children }: { children: React.ReactNode }) {
     const [loading, setLoading] = useState(true);
@@ -24,10 +25,10 @@ export default function ClientRoot({ children }: { children: React.ReactNode }) 
     }, []);
 
     return (
-        <>
+        <LocalizationProvider>
             <SpotlightBackground />
             {loading && <LoadingOverlay />}
             {children}
-        </>
+        </LocalizationProvider>
     );
 }

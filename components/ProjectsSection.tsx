@@ -24,7 +24,6 @@ export default function ProjectsSection({ projectsRef }: ProjectsSectionProps) {
             id="projects"
             ref={projectsRef}
             className="onepage-section"
-            style={{ scrollMarginTop: "5rem" }}
         >
             <h2 className="section-title" hidden>Projelerim</h2>
             <ProjectCard

@@ -1,10 +1,15 @@
 import React from "react";
 import "./Sidebar.css";
+import { FaGithub, FaLinkedin, FaCodepen, FaInstagram } from "react-icons/fa";
+import { FaI } from "react-icons/fa6";
+
 
 interface SidebarProps {
     activeSection: string;
     setActiveSection?: (section: string) => void;
 }
+
+/* https://codepen.io/Orway */
 
 export default function Sidebar({ activeSection }: SidebarProps) {
     return (
@@ -91,6 +96,36 @@ export default function Sidebar({ activeSection }: SidebarProps) {
                     </ul>
                 </nav>
             </div>
+            <ul className="social-icons" aria-label="Social media">
+                <li>
+                    <a href="https://github.com/dorukhankilicaslan"
+                        target="_blank" rel="noreferrer noopener" aria-label="GitHub">
+                        <span className="sr-only" hidden>GitHub</span>
+                        <FaGithub size={20} />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/dorukhankilicaslan/"
+                        target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
+                        <span className="sr-only" hidden>LinkedIn</span>
+                        <FaLinkedin size={20} />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://codepen.io/Orway"
+                        target="_blank" rel="noreferrer noopener" aria-label="CodePen">
+                        <span className="sr-only" hidden>CodePen</span>
+                        <FaCodepen size={20} />
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/dorukhan.k/"
+                        target="_blank" rel="noreferrer noopener" aria-label="Instagram">
+                        <span className="sr-only" hidden>Instagram</span>
+                        <FaInstagram size={20} />
+                    </a>
+                </li>
+            </ul>
         </aside>
     );
 }
