@@ -1,6 +1,7 @@
 .project-card {
     border: 1px solid var(--border, #233554);
     background: rgba(17, 34, 64, 0.6);
+    margin-bottom: 2rem;
     /* var(--sidebar-bg) ile değiştirilebilir */
 }
 
